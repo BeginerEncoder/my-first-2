@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Обьявления{% endblock %}
+
+
+{% block content %}
+    
+    {% if latest_advert_list  %}
+
+        <h1>Обьявления:</h1>
+        <div class="list">
+            {% for a in latest_advert_list %}
+            <div class="advert">
+                <h3 class="advert">
+                    <a href="{% url 'advert:detail' a.id %}" class="advert">
+                        •{{a.advert_title}}
+                    </a>
+                    <br>
+                </h3>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        Обьявления ненайдены ^_^
+    {% endif %}
+
+    <h2>
+        <a href="advert_create/" class="crt">Создать обьявление</a>
+    </h2>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Создание обьявления{% endblock %}
+
+{% block content %}
+
+    
+<h2>Редактирование:</h2>
+
+<form action="{% url 'advert:leave_advert' %}" method="POST">
+
+    {% csrf_token %}
+
+    <input type="text" required placeholder="Название обьявления" name = "name"><br>
+    <textarea name= "text" required = "" placeholder="Текст обьявления"></textarea><br>
+    
+
+    <button type="submit" class="crt">Опубликовать</button>
+
+</form>
+
+{% endblock %}

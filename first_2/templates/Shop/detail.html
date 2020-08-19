@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{advert.advert_title}} {% endblock %}
+
+{% block content %}
+
+
+    <hr>
+
+    <h2>{{product.product_title}}</h2>
+    
+    <em>{{product.pub_date}}</em>
+    
+    {% if product.was_published_resently %}
+            <dr>НОВОЕ!
+    {% endif %}
+
+    <br>
+    <a href="/media/{{product.product_image}}">
+    <img src="/media/{{product.product_image}}" class="image">
+    </a>
+    <p>{{product.product_text}}</p>
+
+    <h3>Цена: {{product.product_price}}₽</h3>
+    
+    <hr>
+    <hr>
+
+    {% if latest_comments_list  %}
+
+        {% for c in latest_comments_list  %}
+
+            <p>
+                <strong>{{c.author_name}}</strong>
+                <p>{{c.comment_text}}</p>
+            </p>
+
+        {% endfor  %}
+    {% else  %}
+    Коментарии не найдены! станьте первым)
+    {% endif  %}
+    <hr>
+
+    <form action="{% url 'shop:leave_comment' product.id %}" method="POST" class="comment">
+
+        {% csrf_token %}
+
+        <textarea name= "text" required = "" placeholder="Текст коментария" class="comment"></textarea>
+
+        <button type="submit" class="comment"><img src="{% static 'images/comment.png' %}" id = "comment"></button><br>
+
+        
+
+    </form>
+
+{% endblock %}

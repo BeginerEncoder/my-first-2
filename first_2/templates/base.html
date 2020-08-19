@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Мой сайт{% endblock %}</title>
+        <link rel="SHORTCUT ICON" href='{% static "images/Game.png" %}' type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link href="https://fonts.googleapis.com/css?family=Arsenal|Comfortaa|Exo+2|Odibee+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <wrapper>
+            <img src="{% static 'images/bg.png'%}" id = "bg">
+            <header>
+                <div class="inner-header">
+                        <div class="back">
+                            {% block back %}
+                                <a href="../" class="back" ><-назад</a>
+                            {% endblock %}
+                        </div>
+                    <div class="void_1"></div>
+                    
+                    <!--div class="void_2"></div-->
+                    {% if user.is_authenticated %}
+                        <div class="profile">
+                            <a href="{% url 'account_logout' %}" class="profile" >{{user.username}}</a>
+                        </div>
+                    {% else %} 
+                        <div class="profile">
+                            <a href= '{% url "account_signup" %}' class="profile" >Регистрация</a>
+                        </div>
+                        <div class="profile">
+                            <a href= '{% url "account_login" %}' class="profile" >Войти</a>
+                        </div>
+                    {% endif %}
+                    <form class="search">
+                        <input type="text" class="search" placeholder="Искать здесь...">
+                        <button class="search" type="submit"><span class="lupa"></span></button>
+                    </form>
+                    <div class="logo">
+                        <p id="name">GAMEshop.net</p>
+                        <img src="{% static 'images/Game.png'%}" id = "gamepad">
+                    </div>
+                    {% block header %}{% endblock %}
+                    <div style="clear: both"></div>
+                </div>
+            </header>
+            <div class="row">
+                <content>
+                    <div class="inner-content">
+                        {% block content %}{% endblock %}
+                        <div style="clear: both"></div>
+                    </div>   
+                </content>
+                <sidebar>
+                    <div class="inner-sidebar">
+                        {% block sidebar %}{% endblock %}
+                        <div style="clear: both"></div>
+                    </div>
+                </sidebar>
+            </div>
+            <footer>
+                <div class="inner-footer">
+                    {% block footer %}{% endblock %}
+                    <div style="clear: both"></div>
+                </div>
+            </footer>
+        </wrapper>
+    </body>
+</html>

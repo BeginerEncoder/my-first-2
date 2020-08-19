@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{advert.advert_title}} {% endblock %}
+
+{% block content %}
+<div>
+
+    <h2>{{advert.advert_title}}</h2>
+
+    <p>{{advert.advert_text}}</p>
+
+    <em>{{advert.pub_date}}</em>
+    
+    {% if advert.was_published_resently %}
+        НОВОЕ!
+    {% endif %}
+    
+    <hr>
+
+    {% if latest_comments_list  %}
+
+        {% for c in latest_comments_list  %}
+
+            <p>
+                <strong>{{c.author_name}}</strong>
+                <p>{{c.comment_text}}</p>
+            </p>
+
+        {% endfor  %}
+    {% else  %}
+    Коментарии не найдены! станьте первым)
+    {% endif  %}
+
+    <hr>
+
+    
+        <form action="{% url 'advert:leave_comment' advert.id %}" method="POST" class="comment">
+
+            {% csrf_token %}
+
+            <textarea name= "text" required = "" placeholder="Текст коментария" class="comment"></textarea>
+
+            <button type="submit" class="comment"><img src="{% static 'images/comment.png' %}" id = "comment"></button><br>
+
+            
+        </form>
+</div>
+
+{% endblock %}

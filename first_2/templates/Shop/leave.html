@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Опубликовать товар{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+    
+<h2>Редактирование:</h2>
+
+<!--form action="{% url 'shop:leave_product' %}" method="POST">
+
+    {% csrf_token %}
+
+    <input type="text" required placeholder="Название товара" name = "name"><br>
+    <textarea name= "text" required = "" placeholder="Описание товара"></textarea><br>
+    <form method="FILES">
+        <input type="file" name = "image" accept="image/*">
+    </form><br>
+    <input type="number" name="price" min="0.00" max="1000000" value="0.00"><br>
+
+    <button type="submit">Опубликовать</button>
+
+</form-->
+
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+<button type="submit">Опубликовать</button>
+
+{% endblock %}

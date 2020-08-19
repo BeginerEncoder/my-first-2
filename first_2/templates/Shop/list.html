@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Магазин{% endblock %}
+
+{% block content %}
+
+    {% if latest_product_list  %}
+
+        <h1>Товары:</h1>
+        <div class="list">
+            {% for a in latest_product_list %}
+            <div class="advert">
+                <h3 class="advert">
+                    <a href="{% url 'shop:detail' a.id %}" class="advert">
+                        •{{a.product_title}}
+                    </a>
+                    <br>
+                </h3>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <br><h4>>>>Товары ненайдены ^_^</h4>
+    {% endif %}
+
+    <h2>
+        <a href="product_create/" class="crt">Опубликовать товар</a>
+    </h2>
+
+{% endblock %}
