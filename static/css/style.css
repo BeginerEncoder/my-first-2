@@ -1,0 +1,290 @@
+body{
+    margin: 0;
+}
+wrapper {
+    color: #bdbdbd;
+    font-family: 'Arsenal', sans-serif;
+}
+h1{
+    font-family: 'Comfortaa', cursive;
+}
+h2, h3, h4, h5, h6{
+    font-family: 'Exo 2', sans-serif;
+}
+p{
+    font-family: 'Arsenal', sans-serif;
+}
+
+#bg {
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left:0; 
+    min-width:100%;
+    min-height:100%;
+}
+header { 
+    margin-bottom: 20px;
+    min-height: 75px;
+}
+.inner-header {
+    background:  rgb(41, 41, 41);
+    min-height: 75px;
+    border-radius: 3px;
+    border-bottom: 3px solid #777777;
+}
+.row:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+.row { display: inline-block; }
+  * html .row { height: 1%; }
+  .row { display: block; }
+content {
+    width: calc(70% - 30px);
+    float: left;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.inner-content {
+    background:  rgb(41, 41, 41, 0.9);
+    min-height: auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: 3px solid #777777;
+}
+sidebar {
+    width: calc(30% - 30px);
+    float: left;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.inner-sidebar {
+    background:  rgb(41, 41, 41, 0.9);
+    min-height: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 3px solid #777777;
+}
+footer {
+    margin-top: 20px;
+}
+.inner-footer {
+    background: #292929;
+    height: 100px;
+    border-top: 3px solid #777777;
+    border-radius: 3px;
+    padding: 15px;
+}
+p{
+    margin: 0px;
+}
+div.advert{
+    margin: 0px;
+    min-height: 30px;
+    font-size: 25px;
+    min-width: 300px;
+}
+h3.advert{
+    margin: 0px;
+    height: 40px;
+}
+h1{
+    font-size: 40px;
+}
+a {
+    text-decoration:none;
+    color: #bdbdbd;
+}
+button {
+    text-decoration:none;
+    color: #bdbdbd;
+    background-color:#303030;
+}
+.crt:hover{
+    background-color: #757575;
+}
+.crt{
+    border: 3px solid #757575;
+    padding: 3px;
+    border-radius: 10px;
+}
+.crt:active{
+    background-color: #585858;
+}
+a.advert{
+    display: block;
+}
+div.advert:hover{
+    background-color: rgba(185, 185, 185, 0.3);
+}
+div.list{
+    min-width: 75%;
+}
+a.back{
+    width: 75px;
+    height: 100%;
+    display: block;
+    font-size: 20px;
+    line-height: 80px;
+}
+div.back{ 
+    height: 80px;
+    width: 75px;
+    float: left;
+}
+a.back:hover{
+    background-color: rgba(185, 185, 185, 0.3);
+}
+#gamepad{
+    width: 6%;
+    float: right;
+}
+#name{
+    font-family: 'Odibee Sans', cursive;
+    font-size: 70px;
+    margin: 0em;
+    float: right;
+    color: #707070;
+}
+
+.void_1{
+    height: 75px;
+    width: calc(50% - 400px);
+    float: left;
+}
+
+/*-----------------------------------------SEARCH-----------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+form.search {
+    position: relative;
+    width: 250px;
+    margin-top: 17.5px;
+    float: right;
+    margin-right:10px ;
+  }
+  input.search {
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #292929;
+    color: #9E9C9C;
+    font-size: 20px;
+  }
+  button.search {
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background:#808080;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  button.search:active{
+    background: #585858;
+    border: 3px solid #757575;
+  }
+  button.search:hover{
+    background: #bdbdbd;
+  }
+  button.search:before {
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #F9F0DA;
+  }
+/*----------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+span{height:30px; width:30px; display:block; position:relative;}
+ 
+.lupa:before, .lupa:after{content:''; height:20px; display:block; position:absolute; top:0; left:0; }
+ 
+.lupa:before{width:20px; border:3px #292929 solid; border-radius:100%;-webkit-border-radius:100%;-moz-border-radius:100%;}
+ 
+.lupa:after{width:7px; background:#292929; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg); top:17px; left:24px;}
+/*----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------SEARCH---------------------------------------------------------------------*/
+
+.void_2{
+    height: 75px;
+    width: calc(50% - 550px);
+    float: left;
+}
+div.profile{
+    float: right;
+    margin: 15px;
+}
+a.profile{
+    min-width: 100px;
+    height: 45px;
+    display: block;
+    font-size: 20px;
+    background-color: #303030;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    border: #808080  solid 3px;
+    /*margin-left: 30px;*/
+}
+a.profile:hover{
+    border: #bdbdbd solid 3px;
+}
+a.profile:active{
+    background-color: #252525;
+    border: #808080 solid 3px;
+}
+
+form.comment {
+    position: relative;
+    width: 450px;
+    margin-top: 17.5px;
+    float: left;
+  }
+  textarea.comment {
+    width: calc(100% - 40px);
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #292929;
+    color: #9E9C9C;
+    font-size: 20px;
+    resize: none;
+    float: left;
+  }
+  img#comment{
+    width: 30px;
+    height: 30px;
+  }
+  button.comment {
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: #777777;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  button.comment:active{
+    background: #585858;
+    border: 3px solid #757575;
+  }
+  button.comment:before {
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #F9F0DA;
+  }
+  .image{
+    width:100% ;  
+}
